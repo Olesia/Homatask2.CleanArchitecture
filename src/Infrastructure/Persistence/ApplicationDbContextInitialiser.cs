@@ -14,32 +14,13 @@ public class ApplicationDbContextInitialiser
 
     public async Task InitialiseAsync()
     {
-        try
+        if (_context.Database.IsSqlServer())
         {
-            if (_context.Database.IsSqlServer())
-            {
-                await _context.Database.MigrateAsync();
-            }
-        }
-        catch (Exception ex)
-        {
-            throw;
+            await _context.Database.MigrateAsync();
         }
     }
 
     public async Task SeedAsync()
-    {
-        try
-        {
-            await TrySeedAsync();
-        }
-        catch (Exception ex)
-        {
-            throw;
-        }
-    }
-
-    public async Task TrySeedAsync()
     {
         if (!_context.Categories.Any())
         {

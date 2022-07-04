@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Homatask2.CleanArchitecture.Application.Common;
 using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
@@ -19,15 +20,8 @@ public class GetCategoryQueryHandler : IRequestHandler<GetItemQuery, ItemDto>
 
     public async Task<ItemDto> Handle(GetItemQuery request, CancellationToken cancellationToken)
     {
-        try
-        {
-            var result = await _repository.GetById(request.Id, cancellationToken);
-            return _mapper.Map<ItemDto>(result);
-        }
-        catch (Exception)
-        {
-            throw;
-        }
+        var result = await _repository.GetById(request.Id, cancellationToken);
+        return _mapper.Map<ItemDto>(result);
     }
 }
 

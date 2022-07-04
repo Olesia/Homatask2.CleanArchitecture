@@ -1,4 +1,5 @@
-﻿using Homatask2.CleanArchitecture.Domain.Common;
+﻿using Homatask2.CleanArchitecture.Application.Common;
+using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
 
@@ -17,15 +18,8 @@ public class DeleteItemCommandHandler : IRequestHandler<DeleteItemCommand>
 
     public async Task<Unit> Handle(DeleteItemCommand request, CancellationToken cancellationToken)
     {
-        try
-        {
-            await _repository.Delete(request.Id, cancellationToken);
+        await _repository.Delete(request.Id, cancellationToken);
 
-            return Unit.Value;
-        }
-        catch (Exception)
-        {
-            throw;
-        }
+        return Unit.Value;
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Homatask2.CleanArchitecture.Domain.Common;
+using Homatask2.CleanArchitecture.Application.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
 
@@ -20,14 +20,7 @@ public class GetCategoriesQueryHandler : IRequestHandler<GetCategoriesQuery, IEn
 
     public async Task<IEnumerable<CategoryDto>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
     {
-        try
-        {
-            var categories = await _repository.List(cancellationToken);
-            return _mapper.Map<IEnumerable<CategoryDto>>(categories);
-        }
-        catch (Exception)
-        {
-            throw;
-        }
+        var categories = await _repository.List(cancellationToken);
+        return _mapper.Map<IEnumerable<CategoryDto>>(categories);
     }
 }

@@ -1,4 +1,4 @@
-﻿using Homatask2.CleanArchitecture.Domain.Common;
+﻿using Homatask2.CleanArchitecture.Application.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using Homatask2.CleanArchitecture.Infrastructure.Persistence;
 using InterfaceAdapter.Interfaces;

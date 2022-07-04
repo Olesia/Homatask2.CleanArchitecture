@@ -1,4 +1,5 @@
-﻿using Homatask2.CleanArchitecture.Domain.Common;
+﻿using Homatask2.CleanArchitecture.Application.Common;
+using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
 
@@ -10,7 +11,7 @@ public record UpdateItemCommand : IRequest
     public string Name { get; init; }
     public string Description { get; init; }
     public string Image { get; init; }
-    public float Price { get; init; }
+    public decimal Price { get; init; }
     public uint Amount { get; init; }
     public int CategoryId { get; init; }
 }
@@ -26,24 +27,16 @@ public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand>
 
     public async Task<Unit> Handle(UpdateItemCommand request, CancellationToken cancellationToken)
     {
-        try
-        {
-            var entity = await _repository.GetById(request.Id, cancellationToken);
-            entity.Name = request.Name;
-            entity.Image = request.Image;
-            entity.Amount = request.Amount;
-            entity.Price = request.Price;
-            entity.Description = request.Description;
-            entity.CategoryId = request.CategoryId;
+        var entity = await _repository.GetById(request.Id, cancellationToken);
+        entity.Name = request.Name;
+        entity.Image = request.Image;
+        entity.Amount = request.Amount;
+        entity.Price = request.Price;
+        entity.Description = request.Description;
+        entity.CategoryId = request.CategoryId;
 
-            await _repository.Update(entity, cancellationToken);
+        await _repository.Update(entity, cancellationToken);
 
-            return Unit.Value;
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-        
+        return Unit.Value;
     }
 }

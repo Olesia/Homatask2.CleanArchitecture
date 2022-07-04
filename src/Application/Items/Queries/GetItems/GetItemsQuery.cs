@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
+using Homatask2.CleanArchitecture.Application.Common;
 using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
@@ -26,17 +27,10 @@ public class GetItemsQueryHandler : IRequestHandler<GetItemsQuery, IEnumerable<I
 
     public async Task<IEnumerable<ItemDto>> Handle(GetItemsQuery request, CancellationToken cancellationToken)
     {
-        try
-        {
-            if (request == null) { return Enumerable.Empty<ItemDto>(); }
+        if (request == null) { return Enumerable.Empty<ItemDto>(); }
 
-            Expression<Func<Item, bool>>? categoryFilter = (request.CategoryId != null) ? e => e.CategoryId == request.CategoryId : null;
-            var categories = await _repository.List(categoryFilter, request.PageNumber, request.PageSize,cancellationToken);
-            return _mapper.Map<IEnumerable<ItemDto>>(categories);
-        }
-        catch (Exception)
-        {
-            throw;
-        }
+        Expression<Func<Item, bool>>? categoryFilter = (request.CategoryId != null) ? e => e.CategoryId == request.CategoryId : null;
+        var categories = await _repository.List(categoryFilter, request.PageNumber, request.PageSize, cancellationToken);
+        return _mapper.Map<IEnumerable<ItemDto>>(categories);
     }
 }

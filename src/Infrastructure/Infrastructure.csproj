@@ -22,8 +22,4 @@
       <ProjectReference Include="..\InterfaceAdapter\InterfaceAdapter.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Persistence\Migrations\" />
-    </ItemGroup>
-
 </Project>

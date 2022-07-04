@@ -1,6 +1,9 @@
 ﻿using System.Linq.Expressions;
+using Homatask2.CleanArchitecture.Domain.Common;
+using Homatask2.CleanArchitecture.Domain.Entities;
 
-namespace Homatask2.CleanArchitecture.Domain.Common;
+namespace Homatask2.CleanArchitecture.Application.Common;
+
 public interface IRepository<T> where T : BaseEntity
 {
     Task<IEnumerable<T>> List(CancellationToken cancellationToken);
