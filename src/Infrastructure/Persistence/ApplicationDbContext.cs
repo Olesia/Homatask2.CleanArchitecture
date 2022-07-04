@@ -1,4 +1,5 @@
-﻿using Homatask2.CleanArchitecture.Domain.Entities;
+﻿using System.Reflection;
+using Homatask2.CleanArchitecture.Domain.Entities;
 using InterfaceAdapter.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,17 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Category> Categories => Set<Category>();
 
     public DbSet<Item> Items => Set<Item>();
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<Category>()
+            .HasOne(v => v.ParentCategory)
+            .WithOne()
+            .HasForeignKey<Category>(c => c.ParentCategoryId)
+            .OnDelete(DeleteBehavior.ClientCascade);
+
+        base.OnModelCreating(builder);
+    }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

@@ -57,6 +57,15 @@ public class ApplicationDbContextInitialiser
                 _context.Items.Add(new Item { Name = "Item 1", Description = "Description 1", Price = 100, Amount = 5, CategoryId = categoryId.Value });
                 _context.Items.Add(new Item { Name = "Item 2", Description = "Description 2", Price = 500, Amount = 10, CategoryId = categoryId.Value });
                 _context.Items.Add(new Item { Name = "Item 3", Description = "Description 3", Price = 1000, Amount = 15, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 1", Description = "Description 4", Price = 100, Amount = 5, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 2", Description = "Description 5", Price = 500, Amount = 10, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 3", Description = "Description 6", Price = 1000, Amount = 15, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 1", Description = "Description 7", Price = 100, Amount = 5, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 2", Description = "Description 8", Price = 500, Amount = 10, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 3", Description = "Description 9", Price = 1000, Amount = 15, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 1", Description = "Description 10", Price = 100, Amount = 5, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 2", Description = "Description 11", Price = 500, Amount = 10, CategoryId = categoryId.Value });
+                _context.Items.Add(new Item { Name = "Item 3", Description = "Description 12", Price = 1000, Amount = 15, CategoryId = categoryId.Value });
             }
             await _context.SaveChangesAsync();
         }

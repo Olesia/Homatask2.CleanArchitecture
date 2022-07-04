@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI", "src\WebUI\WebUI.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceAdapter", "src\InterfaceAdapter\InterfaceAdapter.csproj", "{F5545BBD-4A09-410F-A4C4-374B7EA53B8F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "src\WebApi\WebApi.csproj", "{79ABB566-4039-4C94-A651-42C1D473284E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{F5545BBD-4A09-410F-A4C4-374B7EA53B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5545BBD-4A09-410F-A4C4-374B7EA53B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5545BBD-4A09-410F-A4C4-374B7EA53B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ABB566-4039-4C94-A651-42C1D473284E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ABB566-4039-4C94-A651-42C1D473284E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ABB566-4039-4C94-A651-42C1D473284E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ABB566-4039-4C94-A651-42C1D473284E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{117DA02F-5274-4565-ACC6-DA9B6E568B09} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
 		{22454EE9-16B3-4B7A-8352-37E59B858155} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
 		{F5545BBD-4A09-410F-A4C4-374B7EA53B8F} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
+		{79ABB566-4039-4C94-A651-42C1D473284E} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CB609D9-5D54-4C11-A371-DAAC8B74E430}

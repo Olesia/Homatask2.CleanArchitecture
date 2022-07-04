@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
+using AutoMapper;
 using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
@@ -7,14 +8,9 @@ namespace Homatask2.CleanArchitecture.Application.Items.Queries.GetItems;
 
 public record GetItemsQuery : IRequest<IEnumerable<ItemDto>>
 {
-    public int Id { get; init; }
-    public string Name { get; init; }
-    public string? Description { get; init; }
-    public string? Image { get; init; }
-
-    public float Price { get; init; }
-    public uint Amount { get; init; }
-    public int CategoryId { get; init; }
+    public int? CategoryId { get; set; } = null;
+    public int PageNumber { get; init; } = 1;
+    public int PageSize { get; init; } = 10;
 }
 
 public class GetItemsQueryHandler : IRequestHandler<GetItemsQuery, IEnumerable<ItemDto>>
@@ -32,7 +28,10 @@ public class GetItemsQueryHandler : IRequestHandler<GetItemsQuery, IEnumerable<I
     {
         try
         {
-            var categories = await _repository.List(cancellationToken);
+            if (request == null) { return Enumerable.Empty<ItemDto>(); }
+
+            Expression<Func<Item, bool>>? categoryFilter = (request.CategoryId != null) ? e => e.CategoryId == request.CategoryId : null;
+            var categories = await _repository.List(categoryFilter, request.PageNumber, request.PageSize,cancellationToken);
             return _mapper.Map<IEnumerable<ItemDto>>(categories);
         }
         catch (Exception)

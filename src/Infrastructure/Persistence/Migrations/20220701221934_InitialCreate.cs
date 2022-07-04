@@ -55,7 +55,9 @@ namespace Homatask2.CleanArchitecture.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_ParentCategoryId",
                 table: "Categories",
-                column: "ParentCategoryId");
+                column: "ParentCategoryId",
+                unique: true,
+                filter: "[ParentCategoryId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Items_CategoryId",

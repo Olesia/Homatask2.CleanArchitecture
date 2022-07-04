@@ -9,9 +9,9 @@ public record CreateCategoryCommand : IRequest<int>
     public int Id { get; init; }
     public string Name { get; init; }
 
-    public string Image { get; init; }
+    public string? Image { get; init; }
 
-    public int ParentCategoryId { get; init; }
+    public int? ParentCategoryId { get; init; }
 }
 
 public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, int>

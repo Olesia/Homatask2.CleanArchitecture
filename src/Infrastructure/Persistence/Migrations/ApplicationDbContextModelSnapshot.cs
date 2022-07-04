@@ -42,7 +42,9 @@ namespace Homatask2.CleanArchitecture.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParentCategoryId");
+                    b.HasIndex("ParentCategoryId")
+                        .IsUnique()
+                        .HasFilter("[ParentCategoryId] IS NOT NULL");
 
                     b.ToTable("Categories");
                 });
@@ -84,8 +86,9 @@ namespace Homatask2.CleanArchitecture.Infrastructure.Migrations
             modelBuilder.Entity("Homatask2.CleanArchitecture.Domain.Entities.Category", b =>
                 {
                     b.HasOne("Homatask2.CleanArchitecture.Domain.Entities.Category", "ParentCategory")
-                        .WithMany()
-                        .HasForeignKey("ParentCategoryId");
+                        .WithOne()
+                        .HasForeignKey("Homatask2.CleanArchitecture.Domain.Entities.Category", "ParentCategoryId")
+                        .OnDelete(DeleteBehavior.ClientCascade);
 
                     b.Navigation("ParentCategory");
                 });
