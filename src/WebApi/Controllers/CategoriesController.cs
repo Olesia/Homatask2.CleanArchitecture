@@ -4,6 +4,7 @@ using Homatask2.CleanArchitecture.Application.Categories.Commands.UpdateCategory
 using Homatask2.CleanArchitecture.Application.Categories.Queries;
 using Homatask2.CleanArchitecture.Application.Categories.Queries.GetCategories;
 using Homatask2.CleanArchitecture.Application.Categories.Queries.GetCategory;
+using Homatask2.CleanArchitecture.Application.Common.Exceptions;
 using Homatask2.CleanArchitecture.Domain.Entities.HateoasLinks;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Helpers;
@@ -50,12 +51,20 @@ public class CategoriesController : ApiController
     [HttpGet("{id}")]
     public async Task<ActionResult<CategoryDto>> Get(int id)
     {
-        var category = await Mediator.Send(new GetCategoryQuery(id));
-        var categoryWrapper = new LinkWrapper<CategoryDto>(category)
+        try
         {
-            Links = (List<Link>)_linksHelper.CreateLinksOfCategory(HttpContext, category.Id)
-        };
-        return Ok(categoryWrapper);
+            var category = await Mediator.Send(new GetCategoryQuery(id));
+            var categoryWrapper = new LinkWrapper<CategoryDto>(category)
+            {
+                Links = (List<Link>)_linksHelper.CreateLinksOfCategory(HttpContext, category.Id)
+            };
+            return Ok(categoryWrapper);
+        }
+        catch (NotFoundEntityException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+       
     }
 
     /// <summary>

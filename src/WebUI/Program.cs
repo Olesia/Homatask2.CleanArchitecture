@@ -1,6 +1,7 @@
 using Homatask2.CleanArchitecture.Application.Categories.Commands.CreateCategories;
 using Homatask2.CleanArchitecture.Application.Categories.Commands.DeleteCategory;
 using Homatask2.CleanArchitecture.Application.Categories.Commands.UpdateCategory;
+using Homatask2.CleanArchitecture.Application.Categories.Queries;
 using Homatask2.CleanArchitecture.Application.Categories.Queries.GetCategories;
 using Homatask2.CleanArchitecture.Application.Categories.Queries.GetCategory;
 using Homatask2.CleanArchitecture.Application.Items.Commands.CreateItem;
@@ -39,7 +40,7 @@ using (var scope = app.Services.CreateScope())
 
     #region Add Categories
     Console.WriteLine("\nAdd new category:");
-    var newCategoryId = await _mediator.Send(new CreateCategoryCommand { Name = "Category New", ParentCategoryId = categories.FirstOrDefault().Id });
+    var newCategoryId = await _mediator.Send(new CreateCategoryCommand { Name = "Category New", ParentCategoryId = categories.First().Id });
     categories = await _mediator.Send(new GetCategoriesQuery());
     PrintService.PrintCategoryList(categories);
 

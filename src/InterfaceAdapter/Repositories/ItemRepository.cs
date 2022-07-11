@@ -19,11 +19,7 @@ public class ItemRepository : IRepository<Item>
     public async Task<Item> GetById(int id, CancellationToken cancellationToken)
     {
         var result = await _dbContext.Items.SingleOrDefaultAsync(c => c.Id == id, cancellationToken);
-        if (result == null)
-        {
-            throw new NotFoundException("Item was not found", id);
-        }
-        return result;
+        return result ?? throw new NotFoundEntityException("Item was not found", id);
     }
 
     public async Task<IEnumerable<Item>> List(CancellationToken cancellationToken)
@@ -31,12 +27,21 @@ public class ItemRepository : IRepository<Item>
         return await _dbContext.Items.ToListAsync(cancellationToken);
     }
 
-    public async Task<IEnumerable<Item>> List(Expression<Func<Item, bool>>? predicate, int pageNumber, int pageSize, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Item>> List(Expression<Func<Item, bool>>? predicate, int? pageNumber, int? pageSize, CancellationToken cancellationToken)
     {
-        var result = (predicate == null) ? 
-            _dbContext.Items.Skip((pageNumber - 1) * pageSize).Take(pageSize):
-            _dbContext.Items.Where(predicate).Skip((pageNumber - 1) * pageSize).Take(pageSize);
-
+        IQueryable<Item> result;
+        if (pageNumber != null && pageSize != null)
+        {
+            result = (predicate == null) ?
+                _dbContext.Items.Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value) :
+                _dbContext.Items.Where(predicate).Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value);
+        }
+        else
+        {
+            result = (predicate == null) ?
+                _dbContext.Items :
+                _dbContext.Items.Where(predicate);
+        }
         return await result.ToListAsync(cancellationToken);
     }
 
@@ -52,7 +57,7 @@ public class ItemRepository : IRepository<Item>
 
         if (categoryToUpdate == null)
         {
-            throw new NotFoundException($"Item with name{entity.Name} was not found", entity.Id);
+            throw new NotFoundEntityException($"Item with name{entity.Name} was not found", entity.Id);
         }
 
         categoryToUpdate.Name = entity.Name;
@@ -67,7 +72,7 @@ public class ItemRepository : IRepository<Item>
         var entity = _dbContext.Items.Find(id);
         if (entity == null)
         {
-            throw new NotFoundException("Category was not found: ", id);
+            throw new NotFoundEntityException("Category was not found: ", id);
         }
 
         _dbContext.Items.Remove(entity);

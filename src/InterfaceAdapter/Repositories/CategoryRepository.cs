@@ -19,7 +19,7 @@ public class CategoryRepository : IRepository<Category>
     public async Task<Category> GetById(int id, CancellationToken cancellationToken)
     {
         var result = await _dbContext.Categories.SingleOrDefaultAsync(c => c.Id == id, cancellationToken);
-        return result == null ? throw new NotFoundException("Category was not found", id) : result;
+        return result == null ? throw new NotFoundEntityException("Category was not found", id) : result;
     }
 
     public async Task<IEnumerable<Category>> List(CancellationToken cancellationToken)
@@ -39,7 +39,7 @@ public class CategoryRepository : IRepository<Category>
 
         if (entity == null)
         {
-            throw new NotFoundException(category.Name, category.Id);
+            throw new NotFoundEntityException(category.Name, category.Id);
         }
 
         entity.Name = category.Name;
@@ -53,14 +53,14 @@ public class CategoryRepository : IRepository<Category>
         var entity = _dbContext.Categories.Find(id);
         if (entity == null)
         {
-            throw new NotFoundException("Category was not found: ", id);
+            throw new NotFoundEntityException("Category was not found: ", id);
         }
   
         _dbContext.Categories.Remove(entity);
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
-    public Task<IEnumerable<Category>> List(Expression<Func<Item, bool>> predicate, int pageNumber, int pageSize, CancellationToken cancellationToken)
+    public Task<IEnumerable<Category>> List(Expression<Func<Item, bool>> predicate, int? pageNumber, int? pageSize, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

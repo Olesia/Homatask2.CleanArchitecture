@@ -18,8 +18,12 @@ public class ItemsController : ApiController
     /// <param name="categoryId"> Category Id </param>
     /// <returns> Page of items </returns>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ItemDto>>> GetFilteredList(int pageNumber, int pageSize, int? categoryId)
+    public async Task<ActionResult<IEnumerable<ItemDto>>> GetFilteredList(int? pageNumber, int? pageSize, int? categoryId)
     {
+        if (pageNumber<1 || pageSize < 1)
+        {
+            return BadRequest("Page number and page size must be greater than 0");
+        }
         var newGetItemsQuery = new GetItemsQuery { CategoryId = categoryId, PageNumber = pageNumber, PageSize = pageSize};
         var items = await Mediator.Send(newGetItemsQuery);
         return Ok(items);
