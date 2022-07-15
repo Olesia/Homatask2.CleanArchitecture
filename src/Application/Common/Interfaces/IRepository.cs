@@ -2,7 +2,7 @@
 using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 
-namespace Homatask2.CleanArchitecture.Application.Common;
+namespace Homatask2.CleanArchitecture.Application.Common.Interfaces;
 
 public interface IRepository<T> where T : BaseEntity
 {

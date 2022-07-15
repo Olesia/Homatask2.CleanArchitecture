@@ -1,7 +1,9 @@
-﻿using Homatask2.CleanArchitecture.Application.Common;
+﻿using Azure.Messaging.ServiceBus;
+using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using Homatask2.CleanArchitecture.Infrastructure.Persistence;
 using InterfaceAdapter.Interfaces;
+using InterfaceAdapter.Publishers;
 using InterfaceAdapter.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +32,10 @@ public static class ConfigureServices
 
         services.AddScoped<IRepository<Item>, ItemRepository>();
         services.AddScoped<IRepository<Category>, CategoryRepository>();
+        services.AddScoped<IMessagePublisher, MessagePublisher>();
+        services.AddSingleton((s) => {
+            return new ServiceBusClient(configuration.GetConnectionString("AzureConnection"), new ServiceBusClientOptions() { TransportType = ServiceBusTransportType.AmqpWebSockets });
+        });
 
         return services;
     }

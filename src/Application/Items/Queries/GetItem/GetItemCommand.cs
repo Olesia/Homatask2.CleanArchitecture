@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using Homatask2.CleanArchitecture.Application.Common;
-using Homatask2.CleanArchitecture.Domain.Common;
+using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
 

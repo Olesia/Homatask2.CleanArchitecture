@@ -1,4 +1,4 @@
-﻿using Homatask2.CleanArchitecture.Application.Common;
+﻿using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using MediatR;
@@ -19,10 +19,12 @@ public record UpdateItemCommand : IRequest
 public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand>
 {
     private readonly IRepository<Item> _repository;
+    private readonly IMessagePublisher _publisher;
 
-    public UpdateItemCommandHandler(IRepository<Item> repository)
+    public UpdateItemCommandHandler(IRepository<Item> repository, IMessagePublisher publisher)
     {
         _repository = repository;
+        _publisher = publisher;
     }
 
     public async Task<Unit> Handle(UpdateItemCommand request, CancellationToken cancellationToken)
@@ -36,6 +38,8 @@ public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand>
         entity.CategoryId = request.CategoryId;
 
         await _repository.Update(entity, cancellationToken);
+
+        await _publisher.SendMessageToUpdateItem(entity);
 
         return Unit.Value;
     }

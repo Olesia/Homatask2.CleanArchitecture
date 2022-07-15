@@ -1,6 +1,8 @@
 ﻿using System.Linq.Expressions;
-using Homatask2.CleanArchitecture.Application.Common;
+using System.Text.Json;
+using Azure.Messaging.ServiceBus;
 using Homatask2.CleanArchitecture.Application.Common.Exceptions;
+using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using InterfaceAdapter.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +12,7 @@ namespace InterfaceAdapter.Repositories;
 public class ItemRepository : IRepository<Item>
 {
     private readonly IApplicationDbContext _dbContext;
-
+    
     public ItemRepository(IApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
@@ -53,18 +55,20 @@ public class ItemRepository : IRepository<Item>
 
     public async Task Update(Item entity, CancellationToken cancellationToken)
     {
-        var categoryToUpdate = await _dbContext.Items.SingleOrDefaultAsync(c => c.Id == entity.Id, cancellationToken);
+        var itemToUpdate = await _dbContext.Items.SingleOrDefaultAsync(c => c.Id == entity.Id, cancellationToken);
 
-        if (categoryToUpdate == null)
+        if (itemToUpdate == null)
         {
-            throw new NotFoundEntityException($"Item with name{entity.Name} was not found", entity.Id);
+            throw new NotFoundEntityException($"Item with name {entity.Name} was not found", entity.Id);
         }
 
-        categoryToUpdate.Name = entity.Name;
-        categoryToUpdate.Image = entity.Image;
-        categoryToUpdate.Price = entity.Price;
-        categoryToUpdate.Amount = entity.Amount;
-        await _dbContext.SaveChangesAsync(cancellationToken);
+        itemToUpdate.Name = entity.Name;
+        itemToUpdate.Description = entity.Description;
+        itemToUpdate.Image = entity.Image;
+        itemToUpdate.Price = entity.Price;
+        itemToUpdate.Amount = entity.Amount;
+
+        await _dbContext.SaveChangesAsync(cancellationToken);        
     }
 
     public async Task Delete(int id, CancellationToken cancellationToken)

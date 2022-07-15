@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
-using Homatask2.CleanArchitecture.Application.Common;
 using Homatask2.CleanArchitecture.Application.Common.Exceptions;
+using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
 using InterfaceAdapter.Interfaces;
 using Microsoft.EntityFrameworkCore;
