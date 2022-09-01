@@ -1,11 +1,17 @@
 ﻿using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
+
 using MediatR;
 
 namespace Homatask2.CleanArchitecture.Application.Categories.Commands.UpdateCategory;
 
 public record UpdateCategoryCommand : IRequest
 {
+    public UpdateCategoryCommand()
+    {
+        Name = string.Empty;
+    }
+
     public int Id { get; init; }
 
     public string Name { get; init; }
@@ -30,9 +36,9 @@ public class UpdateCategorytCommandHandler : IRequestHandler<UpdateCategoryComma
         entity.Name = request.Name;
         entity.Image = request.Image;
         entity.ParentCategoryId = request.ParentCategoryId;
-        
+
         await _repository.Update(entity, cancellationToken);
-        
+
         return Unit.Value;
     }
 }

@@ -6,7 +6,9 @@ using Homatask2.CleanArchitecture.Application.Categories.Queries.GetCategories;
 using Homatask2.CleanArchitecture.Application.Categories.Queries.GetCategory;
 using Homatask2.CleanArchitecture.Application.Common.Exceptions;
 using Homatask2.CleanArchitecture.Domain.Entities.HateoasLinks;
+
 using Microsoft.AspNetCore.Mvc;
+
 using WebApi.Helpers;
 
 namespace WebApi.Controllers;
@@ -30,7 +32,7 @@ public class CategoriesController : ApiController
     {
         var categories = await Mediator.Send(new GetCategoriesQuery());
         var categoriesList = new List<LinkWrapper<CategoryDto>>();
-        
+
         foreach (var category in categories)
         {
             var categoryWrapper = new LinkWrapper<CategoryDto>(category)
@@ -40,7 +42,7 @@ public class CategoriesController : ApiController
             categoriesList.Add(categoryWrapper);
         }
 
-        return Ok(categoriesList);  
+        return Ok(categoriesList);
     }
 
     /// <summary>
@@ -64,7 +66,7 @@ public class CategoriesController : ApiController
         {
             return BadRequest(ex.Message);
         }
-       
+
     }
 
     /// <summary>

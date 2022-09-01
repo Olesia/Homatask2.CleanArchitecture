@@ -1,5 +1,6 @@
 ﻿using Homatask2.CleanArchitecture.Infrastructure.Persistence;
 using Homatask2.CleanArchitecture.WebUI.Services;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Microsoft.Extensions.DependencyInjection;

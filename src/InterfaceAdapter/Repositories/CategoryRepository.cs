@@ -1,8 +1,11 @@
 ﻿using System.Linq.Expressions;
+
 using Homatask2.CleanArchitecture.Application.Common.Exceptions;
 using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
+
 using InterfaceAdapter.Interfaces;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace InterfaceAdapter.Repositories;
@@ -19,14 +22,14 @@ public class CategoryRepository : IRepository<Category>
     public async Task<Category> GetById(int id, CancellationToken cancellationToken)
     {
         var result = await _dbContext.Categories.SingleOrDefaultAsync(c => c.Id == id, cancellationToken);
-        return result == null ? throw new NotFoundEntityException("Category was not found", id) : result;
+        return result ?? throw new NotFoundEntityException("Category was not found", id);
     }
 
     public async Task<IEnumerable<Category>> List(CancellationToken cancellationToken)
     {
         return await _dbContext.Categories.ToListAsync(cancellationToken);
     }
-   
+
     public async Task Insert(Category entity, CancellationToken cancellationToken)
     {
         _dbContext.Categories.Add(entity);
@@ -55,12 +58,12 @@ public class CategoryRepository : IRepository<Category>
         {
             throw new NotFoundEntityException("Category was not found: ", id);
         }
-  
+
         _dbContext.Categories.Remove(entity);
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
-    public Task<IEnumerable<Category>> List(Expression<Func<Item, bool>> predicate, int? pageNumber, int? pageSize, CancellationToken cancellationToken)
+    public Task<IEnumerable<Category>> List(Expression<Func<Item, bool>>? predicate, int? pageNumber, int? pageSize, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

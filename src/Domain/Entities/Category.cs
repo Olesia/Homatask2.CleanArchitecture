@@ -1,17 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Homatask2.CleanArchitecture.Domain.Entities
+namespace Homatask2.CleanArchitecture.Domain.Entities;
+
+public class Category : BaseEntity
 {
-    public class Category : BaseEntity
+    [MaxLength(50)]
+    public string Name { get; set; }
+
+    public string? Image { get; set; }
+
+    public Category? ParentCategory { get; private set; }
+
+    public int? ParentCategoryId { get; set; }
+
+    public Category()
     {
-        [MaxLength(50)]
-        public string Name { get; set; }
-
-        public string? Image { get; set; }
-
-        public Category? ParentCategory { get; private set; }
-
-        public int? ParentCategoryId { get; set; }
+        Name = Guid.NewGuid().ToString();
+        Image = null;
     }
 }

@@ -1,5 +1,6 @@
-using AutoMapper;
 using System.Reflection;
+
+using AutoMapper;
 
 namespace Homatask2.CleanArchitecture.Application.Common.Mappings;
 

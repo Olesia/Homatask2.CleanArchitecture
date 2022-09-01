@@ -1,10 +1,14 @@
 ﻿using System.Linq.Expressions;
 using System.Text.Json;
+
 using Azure.Messaging.ServiceBus;
+
 using Homatask2.CleanArchitecture.Application.Common.Exceptions;
 using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
+
 using InterfaceAdapter.Interfaces;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace InterfaceAdapter.Repositories;
@@ -12,12 +16,12 @@ namespace InterfaceAdapter.Repositories;
 public class ItemRepository : IRepository<Item>
 {
     private readonly IApplicationDbContext _dbContext;
-    
+
     public ItemRepository(IApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }
-    
+
     public async Task<Item> GetById(int id, CancellationToken cancellationToken)
     {
         var result = await _dbContext.Items.SingleOrDefaultAsync(c => c.Id == id, cancellationToken);
@@ -68,7 +72,7 @@ public class ItemRepository : IRepository<Item>
         itemToUpdate.Price = entity.Price;
         itemToUpdate.Amount = entity.Amount;
 
-        await _dbContext.SaveChangesAsync(cancellationToken);        
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task Delete(int id, CancellationToken cancellationToken)

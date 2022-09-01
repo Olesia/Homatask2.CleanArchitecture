@@ -1,14 +1,14 @@
 ﻿using Homatask2.CleanArchitecture.Domain.Entities;
+
 using Microsoft.EntityFrameworkCore;
 
-namespace InterfaceAdapter.Interfaces
+namespace InterfaceAdapter.Interfaces;
+
+public interface IApplicationDbContext
 {
-    public interface IApplicationDbContext
-    {
-        DbSet<Category> Categories { get; }
+    DbSet<Category> Categories { get; }
 
-        DbSet<Item> Items { get; }
+    DbSet<Item> Items { get; }
 
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-    }
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

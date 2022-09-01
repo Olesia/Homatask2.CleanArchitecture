@@ -1,4 +1,5 @@
 ﻿using Homatask2.CleanArchitecture.Domain.Entities;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

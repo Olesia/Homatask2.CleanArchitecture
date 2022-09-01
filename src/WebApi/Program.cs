@@ -1,5 +1,7 @@
 using Azure.Messaging.ServiceBus;
+
 using Homatask2.CleanArchitecture.Infrastructure.Persistence;
+
 using WebApi.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,8 +26,8 @@ using (var scope = app.Services.CreateScope())
     await initialiser.SeedAsync();
 }
 
-    // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

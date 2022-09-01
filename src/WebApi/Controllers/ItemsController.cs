@@ -3,6 +3,7 @@ using Homatask2.CleanArchitecture.Application.Items.Commands.DeleteItem;
 using Homatask2.CleanArchitecture.Application.Items.Commands.UpdateItem;
 using Homatask2.CleanArchitecture.Application.Items.Queries;
 using Homatask2.CleanArchitecture.Application.Items.Queries.GetItems;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
@@ -20,11 +21,11 @@ public class ItemsController : ApiController
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ItemDto>>> GetFilteredList(int? pageNumber, int? pageSize, int? categoryId)
     {
-        if (pageNumber<1 || pageSize < 1)
+        if (pageNumber < 1 || pageSize < 1)
         {
             return BadRequest("Page number and page size must be greater than 0");
         }
-        var newGetItemsQuery = new GetItemsQuery { CategoryId = categoryId, PageNumber = pageNumber, PageSize = pageSize};
+        var newGetItemsQuery = new GetItemsQuery { CategoryId = categoryId, PageNumber = pageNumber, PageSize = pageSize };
         var items = await Mediator.Send(newGetItemsQuery);
         return Ok(items);
     }

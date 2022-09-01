@@ -1,5 +1,6 @@
 ﻿using Homatask2.CleanArchitecture.Application.Common.Interfaces;
 using Homatask2.CleanArchitecture.Domain.Entities;
+
 using MediatR;
 
 namespace Homatask2.CleanArchitecture.Application.Items.Commands.CreateItem;
@@ -12,6 +13,13 @@ public record CreateItemCommand : IRequest<int>
     public decimal Price { get; set; }
     public uint Amount { get; set; }
     public int CategoryId { get; set; }
+
+    public CreateItemCommand()
+    {
+        Name = string.Empty;
+        Description = string.Empty;
+        Image = string.Empty;
+    }
 }
 
 public class CreateItemCommandHandler : IRequestHandler<CreateItemCommand, int>

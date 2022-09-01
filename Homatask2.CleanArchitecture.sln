@@ -17,6 +17,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceAdapter", "src\Int
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "src\WebApi\WebApi.csproj", "{79ABB566-4039-4C94-A651-42C1D473284E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{6CFEEE9A-95B9-403B-BC8D-9A51D25110D5}"
+	ProjectSection(SolutionItems) = preProject
+		src\Scripts\init.js = src\Scripts\init.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git_hooks", "git_hooks", "{9CCD3190-E831-448F-9BDA-43BE6C25410F}"
+	ProjectSection(SolutionItems) = preProject
+		src\Scripts\git_hooks\applypatch-msg.sample = src\Scripts\git_hooks\applypatch-msg.sample
+		src\Scripts\git_hooks\commit-msg.sample = src\Scripts\git_hooks\commit-msg.sample
+		src\Scripts\git_hooks\fsmonitor-watchman.sample = src\Scripts\git_hooks\fsmonitor-watchman.sample
+		src\Scripts\git_hooks\post-update.sample = src\Scripts\git_hooks\post-update.sample
+		src\Scripts\git_hooks\pre-applypatch.sample = src\Scripts\git_hooks\pre-applypatch.sample
+		src\Scripts\git_hooks\pre-commit.sample = src\Scripts\git_hooks\pre-commit.sample
+		src\Scripts\git_hooks\pre-merge-commit.sample = src\Scripts\git_hooks\pre-merge-commit.sample
+		src\Scripts\git_hooks\pre-push = src\Scripts\git_hooks\pre-push
+		src\Scripts\git_hooks\pre-rebase.sample = src\Scripts\git_hooks\pre-rebase.sample
+		src\Scripts\git_hooks\pre-receive.sample = src\Scripts\git_hooks\pre-receive.sample
+		src\Scripts\git_hooks\prepare-commit-msg.sample = src\Scripts\git_hooks\prepare-commit-msg.sample
+		src\Scripts\git_hooks\push-to-checkout.sample = src\Scripts\git_hooks\push-to-checkout.sample
+		src\Scripts\git_hooks\update.sample = src\Scripts\git_hooks\update.sample
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +80,8 @@ Global
 		{22454EE9-16B3-4B7A-8352-37E59B858155} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
 		{F5545BBD-4A09-410F-A4C4-374B7EA53B8F} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
 		{79ABB566-4039-4C94-A651-42C1D473284E} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
+		{6CFEEE9A-95B9-403B-BC8D-9A51D25110D5} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
+		{9CCD3190-E831-448F-9BDA-43BE6C25410F} = {6CFEEE9A-95B9-403B-BC8D-9A51D25110D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CB609D9-5D54-4C11-A371-DAAC8B74E430}

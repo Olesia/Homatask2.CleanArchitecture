@@ -13,4 +13,11 @@ public class Item : BaseEntity
     public uint Amount { get; set; }
     public int CategoryId { get; set; }
     public Category Category { get; private set; }
+
+    public Item()
+    {
+        Name = String.Empty;
+        Category = new Category();
+    }
+
 }

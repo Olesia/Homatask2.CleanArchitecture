@@ -1,4 +1,5 @@
 ﻿using Homatask2.CleanArchitecture.Domain.Entities;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace Homatask2.CleanArchitecture.Infrastructure.Persistence;
@@ -29,11 +30,11 @@ public class ApplicationDbContextInitialiser
             _context.Categories.Add(new Category { Name = "Category 3" });
             await _context.SaveChangesAsync();
         }
-        
+
         if (!_context.Items.Any())
         {
             var categoryId = _context.Categories.Where(c => c.Name == "Category 1").FirstOrDefault()?.Id;
-            if(categoryId != null)
+            if (categoryId != null)
             {
                 _context.Items.Add(new Item { Name = "Item 1", Description = "Description 1", Price = 100, Amount = 5, CategoryId = categoryId.Value });
                 _context.Items.Add(new Item { Name = "Item 2", Description = "Description 2", Price = 500, Amount = 10, CategoryId = categoryId.Value });

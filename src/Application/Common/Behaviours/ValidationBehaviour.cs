@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
+
 using MediatR;
+
 using ValidationException = Homatask2.CleanArchitecture.Application.Common.Exceptions.ValidationException;
 
 namespace Homatask2.CleanArchitecture.Application.Common.Behaviours;

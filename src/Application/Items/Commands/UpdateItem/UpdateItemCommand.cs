@@ -1,6 +1,6 @@
 ﻿using Homatask2.CleanArchitecture.Application.Common.Interfaces;
-using Homatask2.CleanArchitecture.Domain.Common;
 using Homatask2.CleanArchitecture.Domain.Entities;
+
 using MediatR;
 
 namespace Homatask2.CleanArchitecture.Application.Items.Commands.UpdateItem;
@@ -14,6 +14,13 @@ public record UpdateItemCommand : IRequest
     public decimal Price { get; init; }
     public uint Amount { get; init; }
     public int CategoryId { get; init; }
+
+    public UpdateItemCommand()
+    {
+        Name = string.Empty;
+        Description = string.Empty;
+        Image = string.Empty;
+    }
 }
 
 public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand>

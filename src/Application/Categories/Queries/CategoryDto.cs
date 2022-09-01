@@ -13,4 +13,9 @@ public class CategoryDto : IMapFrom<Category>
 
     public int? ParentCategoryId { get; set; }
     public Category? ParentCategory { get; private set; }
+
+    public CategoryDto()
+    {
+        Name = string.Empty;
+    }
 }

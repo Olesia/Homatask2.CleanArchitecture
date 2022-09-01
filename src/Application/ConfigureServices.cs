@@ -1,7 +1,10 @@
-﻿using FluentValidation;
+﻿using System.Reflection;
+
+using FluentValidation;
+
 using Homatask2.CleanArchitecture.Application.Common.Behaviours;
+
 using MediatR;
-using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
