@@ -1,0 +1,8 @@
+﻿C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\ConfigureServices.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\ApplicationDbContext.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\ApplicationDbContextInitialiser.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\Configurations\CategoryConfiguration.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\Configurations\ItemConfiguration.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\Migrations\20220704235235_InitialCreate.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\Migrations\20220704235235_InitialCreate.Designer.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\Migrations\ApplicationDbContextModelSnapshot.cs

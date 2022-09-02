@@ -1,0 +1,12 @@
+﻿C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Controllers\ApiController.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Controllers\CategoriesController.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Controllers\ItemsController.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Helpers\LinksHelper.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Program.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\obj\Debug\net6.0\WebApi.GlobalUsings.g.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfo.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\appsettings.Development.json
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\appsettings.json
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Properties\launchSettings.json

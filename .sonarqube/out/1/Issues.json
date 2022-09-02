@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.2.0.0",
+        "fileVersion": "4.2.0-4.22220.5 (432d17a8)",
+        "semanticVersion": "4.2.0",
+        "language": "en-GB"
+      },
+      "results": [
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Items/Queries/ItemDto.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Items/Queries/ItemDto.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Common/Exceptions/NotFoundEntityException.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 14,
+                  "endLine": 3,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Common/Exceptions/NotFoundEntityException.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 8,
+                  "endLine": 3,
+                  "endColumn": 13
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Common/Exceptions/NotFoundEntityException.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 8,
+                  "endLine": 3,
+                  "endColumn": 13
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'NotFoundEntityException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'NotFoundEntityException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Common/Exceptions/ValidationException.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 14,
+                  "endLine": 4,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Common/Exceptions/ValidationException.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 8,
+                  "endLine": 4,
+                  "endColumn": 13
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Application/Common/Exceptions/ValidationException.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 8,
+                  "endLine": 4,
+                  "endColumn": 13
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'ValidationException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'ValidationException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        }
+      ],
+      "rules": {
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S3925": {
+          "id": "S3925",
+          "shortDescription": "\"ISerializable\" should be implemented correctly",
+          "fullDescription": "The ISerializable interface is the mechanism to control the type serialization process. If not implemented correctly this could result in an invalid serialization and hard to detect bugs.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3925",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

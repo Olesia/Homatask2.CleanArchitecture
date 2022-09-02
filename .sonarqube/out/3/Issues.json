@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.2.0.0",
+        "fileVersion": "4.2.0-4.22220.5 (432d17a8)",
+        "semanticVersion": "4.2.0",
+        "language": "en-GB"
+      },
+      "results": [
+        {
+          "ruleId": "S4487",
+          "level": "warning",
+          "message": "Remove this unread private field '_mediator' or refactor the code to use its value.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 32,
+                  "endLine": 14,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'builder' to 'modelBuilder' to match the base class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 58,
+                  "endLine": 28,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S4487": {
+          "id": "S4487",
+          "shortDescription": "Unread \"private\" fields should be removed",
+          "fullDescription": "Private fields only used to store values without reading them later is a case of dead store. So changing the value of such field is useless and most probably indicates a serious error in the code.",
+          "defaultLevel": "note",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4487",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay",
+              "Unnecessary"
+            ]
+          }
+        },
+        "S927": {
+          "id": "S927",
+          "shortDescription": "Parameter names should match base declaration and other partial definitions",
+          "fullDescription": "The name of a parameter in an externally visible. This rule raises an issue when method override does not match the name of the parameter in the base declaration of the method, or the name of the parameter in the interface declaration of the method or the name of any other partial definition.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-927",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

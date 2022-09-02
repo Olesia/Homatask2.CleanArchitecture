@@ -1,0 +1,11 @@
+﻿C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\ConfigureServices.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\Program.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\Services\PrintService.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\obj\Debug\net6.0\WebUI.GlobalUsings.g.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\obj\Debug\net6.0\WebUI.AssemblyInfo.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\obj\Debug\net6.0\Homatask2.CleanArchitecture.WebUI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\appsettings.Development.json
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\appsettings.json
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\appsettings.Production.json
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\Properties\launchSettings.json

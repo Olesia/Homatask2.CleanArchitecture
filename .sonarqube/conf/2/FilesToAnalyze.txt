@@ -1,0 +1,4 @@
+﻿C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\InterfaceAdapter\Interfaces\IApplicationDbContext.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\InterfaceAdapter\Publishers\MessagePublisher.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\InterfaceAdapter\Repositories\CategoryRepository.cs
+C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\InterfaceAdapter\Repositories\ItemRepository.cs

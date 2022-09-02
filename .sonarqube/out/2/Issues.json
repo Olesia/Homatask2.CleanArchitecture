@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.2.0.0",
+        "fileVersion": "4.2.0-4.22220.5 (432d17a8)",
+        "semanticVersion": "4.2.0",
+        "language": "en-GB"
+      },
+      "results": [
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'List' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/InterfaceAdapter/Repositories/CategoryRepository.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 46,
+                  "endLine": 28,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/InterfaceAdapter/Repositories/CategoryRepository.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 40,
+                  "endLine": 66,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S2696",
+          "level": "warning",
+          "message": "Remove this set, which updates a 'static' field from an instance method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/InterfaceAdapter/Publishers/MessagePublisher.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 9,
+                  "endLine": 25,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Olesia_Skrypchenko/source/repos/Mentoring%20program%202022/Homatask3.WebApiCleanArchitecture/src/InterfaceAdapter/Publishers/MessagePublisher.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 38,
+                  "endLine": 16,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S2696": {
+          "id": "S2696",
+          "shortDescription": "Instance members should not write to \"static\" fields",
+          "fullDescription": "Correctly updating a static field from a non-static method is tricky to get right and could easily lead to bugs if there are multiple class instances and/or multiple threads in play.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2696",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S4136": {
+          "id": "S4136",
+          "shortDescription": "Method overloads should be grouped together",
+          "fullDescription": "For clarity, all overloads of the same method should be grouped together. That lets both users and maintainers quickly understand all the current available options.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4136",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
