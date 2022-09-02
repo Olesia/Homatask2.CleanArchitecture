@@ -217,190 +217,174 @@ Extensions 
 services,, 
 ;,, 
 }-- 
-}.. ù
+}.. Ω
 òC:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\ApplicationDbContext.cs
-	namespace
-
- 	
-	Homatask2
-
-
+	namespace 	
+	Homatask2
  
-.
+. 
+CleanArchitecture %
+.% &
+Infrastructure& 4
+.4 5
+Persistence5 @
+;@ A
+public
 
- 
-CleanArchitecture
+ 
+class
 
- %
-.
+  
+ApplicationDbContext
 
-% &
-Infrastructure
+ !
+:
 
-& 4
-.
+" #
+	DbContext
 
-4 5
-Persistence
+$ -
+,
 
-5 @
-;
+- .!
+IApplicationDbContext
 
-@ A
-public 
-class  
-ApplicationDbContext !
-:" #
-	DbContext$ -
-,- .!
-IApplicationDbContext/ D
-{ 
-private 
-readonly 
-	IMediator 
-	_mediator (
-;( )
-public 
+/ D
+{ 
+public 
  
-ApplicationDbContext 
-(  
-	IMediator 
-mediator 
-, 
-DbContextOptions 
-<  
-ApplicationDbContext -
->- .
-options/ 6
-)6 7
-: 	
-base
+ApplicationDbContext 
+(  
+DbContextOptions 
+<  
+ApplicationDbContext -
+>- .
+options/ 6
+)6 7
+: 	
+base
  
-( 
-options 
-) 
-{ 
-	_mediator 
-= 
-mediator 
-; 
-} 
-public 
+( 
+options 
+) 
+{ 
+} 
+public 
 
-DbSet 
-< 
-Category 
-> 
+DbSet 
+< 
+Category 
+> 
 
-Categories %
-=>& (
-Set) ,
-<, -
-Category- 5
->5 6
-(6 7
-)7 8
-;8 9
-public 
+Categories %
+=>& (
+Set) ,
+<, -
+Category- 5
+>5 6
+(6 7
+)7 8
+;8 9
+public 
 
-DbSet 
-< 
-Item 
-> 
-Items 
-=> 
-Set  #
-<# $
-Item$ (
->( )
-() *
-)* +
-;+ ,
-	protected 
-override 
-void 
-OnModelCreating +
-(+ ,
-ModelBuilder, 8
-builder9 @
-)@ A
-{ 
-builder 
-. 
-Entity 
-< 
-Category 
->  
-(  !
-)! "
-. 
-HasOne 
-( 
-v 
-=> 
-v 
-. 
-ParentCategory )
-)) *
-.   
-WithOne   
-(   
-)   
-.!! 
-HasForeignKey!! 
-<!! 
-Category!! #
->!!# $
-(!!$ %
-c!!% &
-=>!!' )
-c!!* +
-.!!+ ,
-ParentCategoryId!!, <
-)!!< =
-."" 
-OnDelete"" 
-("" 
-DeleteBehavior"" $
-.""$ %
-ClientCascade""% 2
-)""2 3
-;""3 4
-base$$ 
-.$$ 
-OnModelCreating$$ 
-($$ 
-builder$$ $
-)$$$ %
-;$$% &
-}%% 
-public'' 
+DbSet 
+< 
+Item 
+> 
+Items 
+=> 
+Set  #
+<# $
+Item$ (
+>( )
+() *
+)* +
+;+ ,
+	protected 
+override 
+void 
+OnModelCreating +
+(+ ,
+ModelBuilder, 8
+modelBuilder9 E
+)E F
+{ 
+modelBuilder 
+. 
+Entity 
+< 
+Category $
+>$ %
+(% &
+)& '
+. 
+HasOne 
+( 
+v 
+=> 
+v 
+. 
+ParentCategory )
+)) *
+. 
+WithOne 
+( 
+) 
+. 
+HasForeignKey 
+< 
+Category #
+># $
+($ %
+c% &
+=>' )
+c* +
+.+ ,
+ParentCategoryId, <
+)< =
+. 
+OnDelete 
+( 
+DeleteBehavior $
+.$ %
+ClientCascade% 2
+)2 3
+;3 4
+base 
+. 
+OnModelCreating 
+( 
+modelBuilder )
+)) *
+;* +
+} 
+public!! 
 
-override'' 
-async'' 
-Task'' 
-<'' 
-int'' "
->''" #
-SaveChangesAsync''$ 4
-(''4 5
-CancellationToken''5 F
-cancellationToken''G X
-=''Y Z
-default''[ b
-)''b c
-{(( 
-return)) 
-await)) 
-base)) 
-.)) 
-SaveChangesAsync)) *
-())* +
-cancellationToken))+ <
-)))< =
-;))= >
-}** 
-}++ ëR
+override!! 
+async!! 
+Task!! 
+<!! 
+int!! "
+>!!" #
+SaveChangesAsync!!$ 4
+(!!4 5
+CancellationToken!!5 F
+cancellationToken!!G X
+=!!Y Z
+default!![ b
+)!!b c
+{"" 
+return## 
+await## 
+base## 
+.## 
+SaveChangesAsync## *
+(##* +
+cancellationToken##+ <
+)##< =
+;##= >
+}$$ 
+}%% ëR
 £C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Infrastructure\Persistence\ApplicationDbContextInitialiser.cs
 	namespace 	
 	Homatask2

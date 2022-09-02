@@ -84,8 +84,7 @@ using (var scope = app.Services.CreateScope())
 
     #region Add Item
     Console.WriteLine("\nAdd new item:");
-    int categoryId = categories != null ? categories.FirstOrDefault().Id : 0;
-    var newItemId = await mediator.Send(new CreateItemCommand { Name = "Item New", CategoryId = categories.FirstOrDefault().Id, Amount = 2, Price = 30 });
+    var newItemId = await mediator.Send(new CreateItemCommand { Name = "Item New", CategoryId = categories.First().Id, Amount = 2, Price = 30 });
     items = await mediator.Send(new GetItemsQuery());
     PrintService.PrintItemList(items);
 
@@ -104,10 +103,10 @@ using (var scope = app.Services.CreateScope())
     {
         Id = item.Id,
         Name = "Item New Updated",
-        CategoryId = categories.FirstOrDefault().Id,
+        CategoryId = categories.First().Id,
         Amount = 2,
         Price = 20
-    }); ;
+    });
     items = await mediator.Send(new GetItemsQuery());
     PrintService.PrintItemList(items);
 
@@ -120,11 +119,5 @@ using (var scope = app.Services.CreateScope())
     PrintService.PrintItemList(items);
 
     #endregion
-
-}
-
-// Make the implicit Program class public so test projects can access it
-public partial class Program
-{
 
 }

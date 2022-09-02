@@ -1,4 +1,4 @@
-﻿using Homatask2.CleanArchitecture.Domain.Entities.HateoasLinks;
+﻿namespace Homatask2.CleanArchitecture.Domain.Entities.HateoasLinks;
 
 public class LinkWrapper<T> : LinkResourceBase
 {

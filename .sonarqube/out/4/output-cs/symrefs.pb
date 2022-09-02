@@ -1,76 +1,46 @@
-º
-‰C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Controllers\ApiController.cs
+ù
+€C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\ConfigureServices.cs
 
- 
+ %
+
 
 
- " +
-
- «
-C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Controllers\CategoriesController.cs
-
- !(
-! - (($ 0==$ 0
-, 7 "
-
-> E
-!! $$! +
-"" ** --  
-&& ** .
-
-661 4
-669 ;::D F
-:: ;;? G==T \
-;; ?? %
-
-NN) /
-NNF MPP0 7
-PP QQ 
-
-[[$ *
-[[/ 1]] 
-[[I P]] bb #
-
-hh$ *
-hh/ 1jj6 8Ä
-‹C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Controllers\ItemsController.cs
-
- 
-
-: I
-O Y Y c
-` h &p x
-o y@ J
- ( 8
-  
-
-'') /
-''B I)), 3
-)) ** 
-
-44$ *
-44/ 166 
-44E L66 ;; #
-
-FF$ *
-FF/ 1HH2 4Ò
-ƒC:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Helpers\LinksHelper.cs
-
- 2
-# 1  # # #
-		% 2 &
-
- 2(
-? F3 :3 :3 :(
-L N_ ab db d
-  Ó
-wC:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\Program.csN
- 
+% 5F
+
 
-  + 2    
- R
-      !! $$ && (( ** 
-  
- 
- 
- 
+N V      
+/ 6 ÿ
+vC:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\Program.cs6
+   + 2 
+ 
+  
+     
+ 
+ 
+ ª
+   $$ #++ &,, 33 !::
+ @@ GG
+ HH PP WW "XX __ ff
+ nn uu
+ vv n
+$$ %%# -++\ f,, --# -@@ AA# -HH II# -WW` jjj 
+++ 33< IGG2 ?(
+33 44 '<< >> #P
+PP QQ $XX 	YY $nn 	oo $vv 	ww $
+WW __4 =uu. 7
+__ `` hh ¹
+„C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\Services\PrintService.cs
+
+  
+ $ 
+1 9
+
+# +
+
+ (
+B N! -
+   
+) -# '= A
+
+ $
+: B %

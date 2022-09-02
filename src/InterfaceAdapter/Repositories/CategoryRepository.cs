@@ -30,6 +30,24 @@ public class CategoryRepository : IRepository<Category>
         return await _dbContext.Categories.ToListAsync(cancellationToken);
     }
 
+    public async Task<IEnumerable<Category>> List(Expression<Func<Category, bool>>? predicate, int? pageNumber, int? pageSize, CancellationToken cancellationToken)
+    {
+        IQueryable<Category> result;
+        if (pageNumber != null && pageSize != null)
+        {
+            result = (predicate == null) ?
+                _dbContext.Categories.Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value) :
+                _dbContext.Categories.Where(predicate).Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value);
+        }
+        else
+        {
+            result = (predicate == null) ?
+                _dbContext.Categories :
+                _dbContext.Categories.Where(predicate);
+        }
+        return await result.ToListAsync(cancellationToken);
+    }
+
     public async Task Insert(Category entity, CancellationToken cancellationToken)
     {
         _dbContext.Categories.Add(entity);
@@ -61,10 +79,5 @@ public class CategoryRepository : IRepository<Category>
 
         _dbContext.Categories.Remove(entity);
         await _dbContext.SaveChangesAsync(cancellationToken);
-    }
-
-    public Task<IEnumerable<Category>> List(Expression<Func<Item, bool>>? predicate, int? pageNumber, int? pageSize, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
     }
 }

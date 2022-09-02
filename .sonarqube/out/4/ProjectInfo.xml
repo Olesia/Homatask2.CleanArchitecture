@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>WebApi</ProjectName>
+  <ProjectName>WebUI</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
-  <ProjectType>Test</ProjectType>
-  <ProjectGuid>79abb566-4039-4c94-a651-42c1d473284e</ProjectGuid>
-  <FullPath>C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebApi\WebApi.csproj</FullPath>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>22454ee9-16b3-4b7a-8352-37e59b858155</ProjectGuid>
+  <FullPath>C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\WebUI\WebUI.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\.sonarqube\conf\4\FilesToAnalyze.txt" />

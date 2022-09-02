@@ -257,8 +257,20 @@ BaseEntity "
 (: ;
 ); <
 ;< =
-} ©
-‘C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Domain\Entities\HateoasLinks\LinkWrapper.cs
+} ƒ
+‘C:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\Domain\Entities\HateoasLinks\LinkWrapper.cs
+	namespace 	
+	Homatask2
+ 
+. 
+CleanArchitecture %
+.% &
+Domain& ,
+., -
+Entities- 5
+.5 6
+HateoasLinks6 B
+;B C
 public 
 class 
 LinkWrapper 

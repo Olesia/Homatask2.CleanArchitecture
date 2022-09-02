@@ -1,6 +1,10 @@
-﻿using FluentValidation.Results;
+﻿using System.Runtime.Serialization;
+
+using FluentValidation.Results;
 
 namespace Homatask2.CleanArchitecture.Application.Common.Exceptions;
+
+[Serializable]
 public class ValidationException : Exception
 {
     public ValidationException()
@@ -15,6 +19,11 @@ public class ValidationException : Exception
         Errors = failures
             .GroupBy(e => e.PropertyName, e => e.ErrorMessage)
             .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray());
+    }
+
+    protected ValidationException(SerializationInfo info, StreamingContext context): base(info, context)
+    {
+        Errors = new Dictionary<string, string[]>();
     }
 
     public IDictionary<string, string[]> Errors { get; }

@@ -13,7 +13,7 @@ public class MessagePublisher : IMessagePublisher
     private const string CartTopic = "carttopic";
 
     private readonly ServiceBusClient _serviceBusClient;
-    private static ServiceBusSender? _sender;
+    private ServiceBusSender? _sender;
 
     public MessagePublisher(ServiceBusClient serviceBusClient)
     {

@@ -44,7 +44,7 @@ Categories		 
 cancellationToken1 B
 )B C
 ;C D
-} ¸
+} Ë
 ïC:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\InterfaceAdapter\Publishers\MessagePublisher.cs
 	namespace		 	
 InterfaceAdapter		
@@ -71,12 +71,11 @@ Publishers		 %
 ServiceBusClient %
 _serviceBusClient& 7
 ;7 8
-private 
-static 
-ServiceBusSender #
-?# $
-_sender% ,
-;, -
+private 
+ServiceBusSender 
+? 
+_sender %
+;% &
 public 
 
 MessagePublisher 
@@ -145,7 +144,7 @@ Publishers		 %
 ;""( )
 }## 	
 }$$ 
-}%% •1
+}%% ∆@
 ôC:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\InterfaceAdapter\Repositories\CategoryRepository.cs
 	namespace 	
 InterfaceAdapter
@@ -267,244 +266,368 @@ Categories  *
 public!! 
 
 async!! 
-Task!! 
-Insert!! 
-(!! 
-Category!! %
-entity!!& ,
-,!!, -
-CancellationToken!!. ?
-cancellationToken!!@ Q
-)!!Q R
+Task!! 
+<!! 
+IEnumerable!! !
+<!!! "
+Category!!" *
+>!!* +
+>!!+ ,
+List!!- 1
+(!!1 2
+
+Expression!!2 <
+<!!< =
+Func!!= A
+<!!A B
+Category!!B J
+,!!J K
+bool!!L P
+>!!P Q
+>!!Q R
+?!!R S
+	predicate!!T ]
+,!!] ^
+int!!_ b
+?!!b c
+
+pageNumber!!d n
+,!!n o
+int!!p s
+?!!s t
+pageSize!!u }
+,!!} ~
+CancellationToken	!! ê
+cancellationToken
+!!ë ¢
+)
+!!¢ £
 {"" 
 
-_dbContext## 
-.## 
-
-Categories## 
-.## 
-Add## !
-(##! "
-entity##" (
-)##( )
-;##) *
-await$$ 
-
-_dbContext$$ 
-.$$ 
-SaveChangesAsync$$ )
-($$) *
-cancellationToken$$* ;
-)$$; <
-;$$< =
-}%% 
-public'' 
-
-async'' 
-Task'' 
-Update'' 
-('' 
-Category'' %
-category''& .
-,''. /
-CancellationToken''0 A
-cancellationToken''B S
-)''S T
-{(( 
-var)) 
-entity)) 
-=)) 
-await)) 
-
-_dbContext)) %
-.))% &
-
-Categories))& 0
-.))0 1 
-SingleOrDefaultAsync))1 E
-())E F
-c))F G
-=>))H J
-c))K L
-.))L M
-Id))M O
-==))P R
-category))S [
-.))[ \
-Id))\ ^
-,))^ _
-cancellationToken))` q
-)))q r
-;))r s
-if++ 
+IQueryable## 
+<## 
+Category## 
+>## 
+result## #
+;### $
+if$$ 
 
-(++ 
-entity++ 
-==++ 
-null++ 
-)++ 
-{,, 	
-throw-- 
-new-- #
-NotFoundEntityException-- -
-(--- .
-category--. 6
-.--6 7
-Name--7 ;
-,--; <
-category--= E
-.--E F
-Id--F H
-)--H I
-;--I J
-}.. 	
-entity00 
-.00 
-Name00 
-=00 
-category00 
-.00 
-Name00 #
-;00# $
-entity11 
-.11 
-Image11 
-=11 
-category11 
-.11  
-Image11  %
-;11% &
-entity22 
-.22 
-ParentCategoryId22 
-=22  !
-category22" *
-.22* +
-ParentCategoryId22+ ;
-;22; <
-await33 
+($$ 
 
-_dbContext33 
-.33 
-SaveChangesAsync33 )
-(33) *
-cancellationToken33* ;
-)33; <
-;33< =
-}44 
-public66 
+pageNumber$$ 
+!=$$ 
+null$$ 
+&&$$ !
+pageSize$$" *
+!=$$+ -
+null$$. 2
+)$$2 3
+{%% 	
+result&& 
+=&& 
+(&& 
+	predicate&& 
+==&&  "
+null&&# '
+)&&' (
+?&&) *
+
+_dbContext'' 
+.'' 
+
+Categories'' %
+.''% &
+Skip''& *
+(''* +
+(''+ ,
+
+pageNumber'', 6
+.''6 7
+Value''7 <
+-''= >
+$num''? @
+)''@ A
+*''B C
+pageSize''D L
+.''L M
+Value''M R
+)''R S
+.''S T
+Take''T X
+(''X Y
+pageSize''Y a
+.''a b
+Value''b g
+)''g h
+:''i j
+
+_dbContext(( 
+.(( 
+
+Categories(( %
+.((% &
+Where((& +
+(((+ ,
+	predicate((, 5
+)((5 6
+.((6 7
+Skip((7 ;
+(((; <
+(((< =
+
+pageNumber((= G
+.((G H
+Value((H M
+-((N O
+$num((P Q
+)((Q R
+*((S T
+pageSize((U ]
+.((] ^
+Value((^ c
+)((c d
+.((d e
+Take((e i
+(((i j
+pageSize((j r
+.((r s
+Value((s x
+)((x y
+;((y z
+})) 	
+else** 
+{++ 	
+result,, 
+=,, 
+(,, 
+	predicate,, 
+==,,  "
+null,,# '
+),,' (
+?,,) *
+
+_dbContext-- 
+.-- 
+
+Categories-- %
+:--& '
+
+_dbContext.. 
+... 
+
+Categories.. %
+...% &
+Where..& +
+(..+ ,
+	predicate.., 5
+)..5 6
+;..6 7
+}// 	
+return00 
+await00 
+result00 
+.00 
+ToListAsync00 '
+(00' (
+cancellationToken00( 9
+)009 :
+;00: ;
+}11 
+public33 
 
-async66 
-Task66 
-Delete66 
-(66 
-int66  
-id66! #
-,66# $
-CancellationToken66% 6
-cancellationToken667 H
-)66H I
-{77 
-var88 
-entity88 
-=88 
+async33 
+Task33 
+Insert33 
+(33 
+Category33 %
+entity33& ,
+,33, -
+CancellationToken33. ?
+cancellationToken33@ Q
+)33Q R
+{44 
 
-_dbContext88 
-.88  
+_dbContext55 
+.55 
 
-Categories88  *
-.88* +
-Find88+ /
-(88/ 0
-id880 2
-)882 3
-;883 4
-if99 
+Categories55 
+.55 
+Add55 !
+(55! "
+entity55" (
+)55( )
+;55) *
+await66 
+
+_dbContext66 
+.66 
+SaveChangesAsync66 )
+(66) *
+cancellationToken66* ;
+)66; <
+;66< =
+}77 
+public99 
+
+async99 
+Task99 
+Update99 
+(99 
+Category99 %
+category99& .
+,99. /
+CancellationToken990 A
+cancellationToken99B S
+)99S T
+{:: 
+var;; 
+entity;; 
+=;; 
+await;; 
+
+_dbContext;; %
+.;;% &
+
+Categories;;& 0
+.;;0 1 
+SingleOrDefaultAsync;;1 E
+(;;E F
+c;;F G
+=>;;H J
+c;;K L
+.;;L M
+Id;;M O
+==;;P R
+category;;S [
+.;;[ \
+Id;;\ ^
+,;;^ _
+cancellationToken;;` q
+);;q r
+;;;r s
+if== 
 
-(99 
-entity99 
-==99 
-null99 
-)99 
-{:: 	
-throw;; 
-new;; #
-NotFoundEntityException;; -
-(;;- .
-$str;;. H
-,;;H I
-id;;J L
-);;L M
-;;;M N
-}<< 	
+(== 
+entity== 
+==== 
+null== 
+)== 
+{>> 	
+throw?? 
+new?? #
+NotFoundEntityException?? -
+(??- .
+category??. 6
+.??6 7
+Name??7 ;
+,??; <
+category??= E
+.??E F
+Id??F H
+)??H I
+;??I J
+}@@ 	
+entityBB 
+.BB 
+NameBB 
+=BB 
+categoryBB 
+.BB 
+NameBB #
+;BB# $
+entityCC 
+.CC 
+ImageCC 
+=CC 
+categoryCC 
+.CC  
+ImageCC  %
+;CC% &
+entityDD 
+.DD 
+ParentCategoryIdDD 
+=DD  !
+categoryDD" *
+.DD* +
+ParentCategoryIdDD+ ;
+;DD; <
+awaitEE 
 
-_dbContext>> 
-.>> 
+_dbContextEE 
+.EE 
+SaveChangesAsyncEE )
+(EE) *
+cancellationTokenEE* ;
+)EE; <
+;EE< =
+}FF 
+publicHH 
+
+asyncHH 
+TaskHH 
+DeleteHH 
+(HH 
+intHH  
+idHH! #
+,HH# $
+CancellationTokenHH% 6
+cancellationTokenHH7 H
+)HHH I
+{II 
+varJJ 
+entityJJ 
+=JJ 
 
-Categories>> 
-.>> 
-Remove>> $
-(>>$ %
-entity>>% +
-)>>+ ,
-;>>, -
-await?? 
+_dbContextJJ 
+.JJ  
 
-_dbContext?? 
-.?? 
-SaveChangesAsync?? )
-(??) *
-cancellationToken??* ;
-)??; <
-;??< =
-}@@ 
-publicBB 
-
-TaskBB 
-<BB 
-IEnumerableBB 
-<BB 
-CategoryBB $
->BB$ %
->BB% &
-ListBB' +
-(BB+ ,
+CategoriesJJ  *
+.JJ* +
+FindJJ+ /
+(JJ/ 0
+idJJ0 2
+)JJ2 3
+;JJ3 4
+ifKK 
+
+(KK 
+entityKK 
+==KK 
+nullKK 
+)KK 
+{LL 	
+throwMM 
+newMM #
+NotFoundEntityExceptionMM -
+(MM- .
+$strMM. H
+,MMH I
+idMMJ L
+)MML M
+;MMM N
+}NN 	
 
-ExpressionBB, 6
-<BB6 7
-FuncBB7 ;
-<BB; <
-ItemBB< @
-,BB@ A
-boolBBB F
->BBF G
->BBG H
-?BBH I
-	predicateBBJ S
-,BBS T
-intBBU X
-?BBX Y
+_dbContextPP 
+.PP 
 
-pageNumberBBZ d
-,BBd e
-intBBf i
-?BBi j
-pageSizeBBk s
-,BBs t
-CancellationToken	BBu Ü
-cancellationToken
-BBá ò
-)
-BBò ô
-{CC 
-throwDD 
-newDD #
-NotImplementedExceptionDD )
-(DD) *
-)DD* +
-;DD+ ,
-}EE 
-}FF ÒB
+CategoriesPP 
+.PP 
+RemovePP $
+(PP$ %
+entityPP% +
+)PP+ ,
+;PP, -
+awaitQQ 
+
+_dbContextQQ 
+.QQ 
+SaveChangesAsyncQQ )
+(QQ) *
+cancellationTokenQQ* ;
+)QQ; <
+;QQ< =
+}RR 
+}SS ÒB
 ïC:\Users\Olesia_Skrypchenko\source\repos\Mentoring program 2022\Homatask3.WebApiCleanArchitecture\src\InterfaceAdapter\Repositories\ItemRepository.cs
 	namespace 	
 InterfaceAdapter

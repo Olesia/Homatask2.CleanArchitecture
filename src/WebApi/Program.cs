@@ -1,5 +1,3 @@
-using Azure.Messaging.ServiceBus;
-
 using Homatask2.CleanArchitecture.Infrastructure.Persistence;
 
 using WebApi.Helpers;
